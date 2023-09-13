@@ -1,0 +1,404 @@
+/* CORE STYLES */
+:root {
+    --overlay-color: rgba(188, 166, 218, 0.726);
+    --menu-speed: 0.75s;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Chakra Petch';
+    src: url(Chakra_Petch/ChakraPetch-Regular.ttf);
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+  }
+  
+  
+  .container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
+  }
+  
+
+  
+  .btn {
+    display: inline-block;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    transition: opacity 1s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    opacity: 0.7;
+  }
+  
+  /* MENU STYLES */
+  .menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+  .menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hamburger Line */
+  .menu-wrap .hamburger > div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+  
+  /* Hamburger Lines - Top & Bottom */
+  .menu-wrap .hamburger > div::before,
+  .menu-wrap .hamburger > div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+  }
+  
+  /* Moves Line Down */
+  .menu-wrap .hamburger > div::after {
+    top: 10px;
+  }
+  
+
+  
+  /* Turns Lines Into X */
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  
+  /* Rotate On Hover When Checked */
+
+  
+  /* Show Menu */
+  .menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition:  opacity 0.4s ease 0.4s;
+  }
+  
+  .menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-wrap .menu > div {
+    background: var(--overlay-color);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+  }
+  
+  .menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+  }
+  
+  
+
+
+  .Virselis{
+    position: absolute;
+    width: 100%;
+    height: 920px;
+    left: 0px;
+    background-image: url(" ");
+    background-color:#ffb0de;
+    opacity:60%;
+
+    flex:100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border: 2px solid black;
+    padding: 0px;
+    
+  }
+
+  
+
+   .Virselis h1{
+    position: absolute;
+    left: 25%;
+    top: 45%;
+    font-size: 150px;
+
+    font-family: 'Chakra Petch';
+    font-style: bold;
+    font-weight: 700;
+    line-height: 130px;
+    text-shadow: 2px 3px 3px #e9329d;
+    border: 2px #ffffff;
+    color: white;
+  
+  }
+
+  .box {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .svg-border-animation {
+    position: relative;
+  }
+  
+  .svg-border-animation svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    left: 0;
+  }
+  
+  .shape {
+    fill: transparent;
+    stroke: rgba(78, 78, 78, 0.781);
+    stroke-width: 2px;
+    stroke-dasharray: 0 0;
+    -webkit-animation: draw 5s linear infinite alternate;
+    animation: draw 5s linear infinite alternate;
+  }
+  
+  h1 {
+    font-size: 150px;
+    color: white;
+    padding: 400px 60px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    font-family: 'Chakra Petch';
+    font-style: bold;
+ 
+    text-shadow: 2px 3px 3px #e9329d;
+    border: 2px #ffffff;
+    color: white;
+  }
+  
+  @keyframes draw {
+    0% {
+      stroke-dasharray: 0 0;
+    }
+  
+    100% {
+      stroke-dasharray: 415 415;
+    }
+  }
+  
+  
+
+  .virsus{
+    width: 100%;
+    height: 60px;
+    border: 2px solid black;
+    padding:5 px;
+    background-color:#ffb0de;
+  }
+
+  .Apie{
+    font-family: 'Chakra Petch';
+    font-style:normal;
+    position: absolute;
+    width: 474px;
+    height: 252px;
+    left: 60px;
+    top: 1000px;
+    border: 2px solid black;
+    padding: 5px;
+    
+  }
+
+  .Kontaktai{
+    font-family: 'Chakra Petch';
+    font-style: bold;
+    position: absolute;
+    width: 155px;
+    height: 29px;
+    left: 1265px;
+    top: 1000px;
+    border: 2px solid black;
+    padding: 5px;
+    padding-bottom: 70px;
+    padding-right: 100px;
+  }
+
+  @media screen and (max-width:600px){
+    .Virselis {
+      width:600px;
+    }
+
+    .Kontaktai{
+      position: absolute;
+      height: 29px;
+      left: 60px;
+      top: 1210px;
+    }
+    .Apie{
+      width:300px;
+    }
+    h1 {
+      font-size: 60px;
+      color: white;
+      padding: 400px 60px;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+      font-family: 'Chakra Petch';
+      font-style: bold;
+   
+      text-shadow: 2px 3px 3px #e9329d;
+      border: 2px #ffffff;
+      color: white;
+    }
+}
+
+.Antraste{
+    position: absolute;
+    height: 29px;
+    left: 60px;
+    top: 1450px;
+    border: 2px solid black;
+    padding: 0px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-top:2px;
+    font-family: 'Chakra Petch';
+    font-style: bold;
+}
+
+
+
+  .Darbai{
+    top: 500px;
+    position:relative;
+    column-count:4;
+    padding:0px;
+    background-color:white;
+    border: 2px solid black;
+    padding: 0px;
+
+  }
+
+  .Darbai paveiksliukai{
+    display:inline-block;
+    overflow:hidden;
+    margin-bottom:5px;
+    
+    
+ 
+  }
+  
+  .paveiksliukai img{
+    width:100%;
+  }
+
+@media screen and (max-width:1024px){
+    .Virselis h1{
+      left:5%;
+    }
+    .Darbai{
+        position:relative;
+        column-count:2;
+    }
+
+    .Kontaktai{
+      position: absolute;
+      height: 29px;
+      left: 60px;
+      top: 1260px;
+    }
+}
+
+
+
+
+
+
+ 
